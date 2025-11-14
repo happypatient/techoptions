@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontario Tech Education Software Guide</title>
+    <style>
+        :root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-red-400: rgba(255, 84, 89, 1);
+  --color-red-500: rgba(192, 21, 47, 1);
+  --color-orange-400: rgba(230, 129, 97, 1);
+  --color-orange-500: rgba(168, 75, 47, 1);
+
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  --color-red-500-rgb: 192, 21, 47;
+  --color-red-400-rgb: 255, 84, 89;
+  --color-orange-500-rgb: 168, 75, 47;
+  --color-orange-400-rgb: 230, 129, 97;
+
+  --color-bg-1: rgba(59, 130, 246, 0.08);
+  --color-bg-2: rgba(245, 158, 11, 0.08);
+  --color-bg-3: rgba(34, 197, 94, 0.08);
+  --color-bg-4: rgba(239, 68, 68, 0.08);
+  --color-bg-5: rgba(147, 51, 234, 0.08);
+  --color-bg-6: rgba(249, 115, 22, 0.08);
+  --color-bg-7: rgba(236, 72, 153, 0.08);
+  --color-bg-8: rgba(6, 182, 212, 0.08);
+
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+
+  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-400-rgb: 119, 124, 124;
+    --color-teal-300-rgb: 50, 184, 198;
+    --color-gray-300-rgb: 167, 169, 169;
+    --color-gray-200-rgb: 245, 245, 245;
+
+    --color-bg-1: rgba(29, 78, 216, 0.15);
+    --color-bg-2: rgba(180, 83, 9, 0.15);
+    --color-bg-3: rgba(21, 128, 61, 0.15);
+    --color-bg-4: rgba(185, 28, 28, 0.15);
+    --color-bg-5: rgba(107, 33, 168, 0.15);
+    --color-bg-6: rgba(194, 65, 12, 0.15);
+    --color-bg-7: rgba(190, 24, 93, 0.15);
+    --color-bg-8: rgba(8, 145, 178, 0.15);
+
+    --color-background: var(--color-charcoal-700);
+    --color-surface: var(--color-charcoal-800);
+    --color-text: var(--color-gray-200);
+    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+    --color-primary: var(--color-teal-300);
+    --color-primary-hover: var(--color-teal-400);
+    --color-primary-active: var(--color-teal-800);
+    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-error: var(--color-red-400);
+    --color-success: var(--color-teal-300);
+    --color-warning: var(--color-orange-400);
+    --color-info: var(--color-gray-300);
+    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+    --color-btn-primary-text: var(--color-slate-900);
+    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+  }
+}
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-16) var(--space-24);
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.navbar-brand {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.navbar-brand:hover {
+  color: var(--color-primary-hover);
+}
+
+.navbar-nav {
+  display: flex;
+  gap: var(--space-24);
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-base);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-32) var(--space-24);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: var(--space-32) 0;
+  background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-3));
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-32);
+}
+
+.hero h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-16);
+  color: var(--color-text);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-16);
+}
+
+.hero-description {
+  max-width: 800px;
+  margin: 0 auto var(--space-32);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-24);
+  margin-bottom: var(--space-32);
+}
+
+.stat-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+}
+
+.stat-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+/* Page Sections */
+.page-section {
+  min-height: 50vh;
+  padding: var(--space-32) 0;
+  scroll-margin-top: 80px;
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin-bottom: var(--space-32);
+  color: var(--color-text);
+}
+
+/* Filters */
+.filters {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  margin-bottom: var(--space-32);
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.filter-input,
+.filter-select {
+  width: 100%;
+  padding: var(--space-8) var(--space-12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  outline: var(--focus-outline);
+  border-color: var(--color-primary);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--space-12);
+  margin-top: var(--space-16);
+}
+
+.btn {
+  padding: var(--space-8) var(--space-16);
+  border: none;
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+/* Course Grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-24);
+  margin-bottom: var(--space-32);
+}
+
+.course-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  box-shadow: var(--shadow-sm);
+}
+
+.course-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.course-code {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-12);
+}
+
+.course-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.course-level {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-12);
+}
+
+.course-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Course Detail View */
+.course-detail-expanded {
+  margin-top: var(--space-32);
+  padding-top: var(--space-32);
+  border-top: 2px solid var(--color-border);
+}
+
+.course-header {
+  background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-3));
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  margin-bottom: var(--space-32);
+}
+
+.course-title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-8);
+}
+
+.course-meta {
+  display: flex;
+  gap: var(--space-16);
+  margin-bottom: var(--space-16);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+/* Software Categories */
+.software-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.category-section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-20);
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.category-header:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+.category-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.category-icon {
+  font-size: var(--font-size-xl);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.category-section.expanded .category-icon {
+  transform: rotate(180deg);
+}
+
+.category-content {
+  display: none;
+  padding: var(--space-24);
+}
+
+.category-section.expanded .category-content {
+  display: block;
+}
+
+.software-comparison {
+  display: grid;
+  gap: var(--space-24);
+}
+
+.software-type-section {
+  margin-bottom: var(--space-24);
+}
+
+.software-type-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-16);
+  color: var(--color-text);
+}
+
+.software-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-16);
+}
+
+.software-card {
+  border: 2px solid;
+  border-radius: var(--radius-lg);
+  padding: var(--space-20);
+  position: relative;
+}
+
+.software-card.desktop {
+  border-color: var(--color-warning);
+  background: linear-gradient(135deg, var(--color-bg-6), var(--color-bg-4));
+}
+
+.software-card.web {
+  border-color: var(--color-success);
+  background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-3));
+}
+
+.software-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-8);
+}
+
+.software-cost {
+  display: inline-block;
+  background-color: var(--color-surface);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-16);
+}
+
+.free-badge {
+  background-color: var(--color-success);
+  color: var(--color-btn-primary-text);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  margin-left: var(--space-8);
+}
+
+.software-url {
+  display: inline-block;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-bottom: var(--space-16);
+  font-weight: var(--font-weight-medium);
+}
+
+.software-url:hover {
+  text-decoration: underline;
+}
+
+.software-section {
+  margin-bottom: var(--space-16);
+}
+
+.software-section-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.software-section-content {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.pros-cons-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pros-cons-list li {
+  padding-left: var(--space-20);
+  margin-bottom: var(--space-8);
+  position: relative;
+  font-size: var(--font-size-base);
+}
+
+.pros-cons-list.pros li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+.pros-cons-list.cons li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: var(--color-error);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Software Table Styles */
+.software-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-32);
+}
+
+.software-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.software-table thead {
+  background-color: var(--color-secondary);
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+}
+
+.software-table th {
+  padding: var(--space-16) var(--space-12);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+  background-color: var(--color-secondary);
+  white-space: nowrap;
+}
+
+.software-table th:first-child {
+  min-width: 180px;
+  padding-left: var(--space-16);
+}
+
+.software-table td {
+  padding: var(--space-16) var(--space-12);
+  border-bottom: 1px solid var(--color-card-border);
+  vertical-align: top;
+  font-size: var(--font-size-base);
+}
+
+.software-table td:first-child {
+  padding-left: var(--space-16);
+}
+
+.software-table tbody tr {
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.software-table tbody tr:hover {
+  background-color: var(--color-secondary);
+}
+
+.software-table tbody tr.web-based {
+  background: linear-gradient(90deg, var(--color-bg-3), transparent);
+}
+
+.software-table tbody tr.desktop {
+  background: linear-gradient(90deg, var(--color-bg-6), transparent);
+}
+
+.software-name-cell {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  min-width: 180px;
+}
+
+/* Education Rank Stars */
+.edu-rank-cell {
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--font-size-lg);
+}
+
+.stars {
+  color: #FFB800;
+  letter-spacing: 2px;
+}
+
+.rank-badge {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  margin-left: var(--space-4);
+  white-space: nowrap;
+}
+
+.rank-badge.excellent {
+  background-color: var(--color-success);
+  color: var(--color-btn-primary-text);
+}
+
+.rank-badge.very-good {
+  background-color: rgba(var(--color-success-rgb), 0.7);
+  color: var(--color-btn-primary-text);
+}
+
+.rank-badge.good {
+  background-color: var(--color-warning);
+  color: var(--color-btn-primary-text);
+}
+
+.rank-badge.fair {
+  background-color: var(--color-secondary-hover);
+  color: var(--color-text);
+}
+
+.rank-badge.limited {
+  background-color: var(--color-error);
+  color: var(--color-btn-primary-text);
+}
+
+.edu-notes {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-top: var(--space-4);
+  line-height: 1.4;
+}
+
+.software-type-badge {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--space-4);
+}
+
+.software-type-badge.web {
+  background-color: var(--color-success);
+  color: var(--color-btn-primary-text);
+}
+
+.software-type-badge.desktop {
+  background-color: var(--color-warning);
+  color: var(--color-btn-primary-text);
+}
+
+.cost-badge {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-background);
+}
+
+.cost-badge.free {
+  background-color: var(--color-success);
+  color: var(--color-btn-primary-text);
+}
+
+.connects-to-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.course-tag {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.software-url-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  word-break: break-all;
+}
+
+.software-url-link:hover {
+  text-decoration: underline;
+}
+
+.software-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.software-list li {
+  padding-left: var(--space-16);
+  margin-bottom: var(--space-4);
+  position: relative;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.software-list.pros li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+.software-list.cons li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: var(--color-error);
+  font-weight: var(--font-weight-bold);
+}
+
+.category-header-row {
+  background-color: var(--color-secondary-hover) !important;
+}
+
+.category-header-row td {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  padding: var(--space-20) var(--space-16);
+  border-top: 2px solid var(--color-border);
+}
+
+@media (max-width: 1200px) {
+  .software-table {
+    display: none;
+  }
+  
+  .software-cards-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 1201px) {
+  .software-cards-mobile {
+    display: none;
+  }
+}
+
+.software-card-mobile {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-20);
+  margin-bottom: var(--space-16);
+  box-shadow: var(--shadow-sm);
+}
+
+.software-card-mobile.web-based {
+  border-color: var(--color-success);
+  background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-3));
+}
+
+.software-card-mobile.desktop {
+  border-color: var(--color-warning);
+  background: linear-gradient(135deg, var(--color-bg-6), var(--color-bg-4));
+}
+
+.mobile-card-header {
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-card-row {
+  margin-bottom: var(--space-12);
+}
+
+.mobile-card-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-4);
+}
+
+/* Comparison Result */
+#comparison-result {
+  display: none;
+}
+
+#comparison-result.active {
+  display: block;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-24);
+}
+
+.comparison-card {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-md);
+}
+
+.comparison-card.desktop {
+  border-color: var(--color-warning);
+  background: linear-gradient(135deg, var(--color-bg-6), var(--color-bg-4));
+}
+
+.comparison-card.web {
+  border-color: var(--color-success);
+  background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-3));
+}
+
+.comparison-header {
+  text-align: center;
+  margin-bottom: var(--space-24);
+  padding-bottom: var(--space-16);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.comparison-type {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-8);
+}
+
+.resource-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  margin-bottom: var(--space-24);
+  box-shadow: var(--shadow-sm);
+}
+
+.resource-card h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-16);
+  color: var(--color-text);
+}
+
+.resource-card h4 {
+  font-size: var(--font-size-lg);
+  margin: var(--space-16) 0 var(--space-8);
+  color: var(--color-text);
+}
+
+.resource-card ul {
+  margin-left: var(--space-24);
+  margin-bottom: var(--space-12);
+}
+
+.resource-card li {
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+}
+
+.download-section {
+  background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-3));
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin: var(--space-24) 0;
+}
+
+.download-section h4 {
+  margin-bottom: var(--space-16);
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-16 {
+  margin-bottom: var(--space-16);
+}
+
+.mb-24 {
+  margin-bottom: var(--space-24);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-nav {
+    gap: var(--space-12);
+  }
+  
+  .nav-link {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-sm);
+  }
+  
+  .hero h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-row {
+    flex-direction: column;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .software-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .filters,
+  .btn {
+    display: none;
+  }
+  
+  .course-card,
+  .software-card {
+    break-inside: avoid;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="navbar-brand" id="logo-home">🎓 Ontario Tech Ed Guide</a>
+            <ul class="navbar-nav">
+                <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#courses" class="nav-link" data-section="courses">Courses</a></li>
+                <li><a href="#comparison" class="nav-link" data-section="comparison">Comparison Tool</a></li>
+                <li><a href="#resources" class="nav-link" data-section="resources">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="main-container">
+        <!-- Section 1: Home -->
+        <section id="home" class="page-section">
+            <!-- Hero Section -->
+            <div class="hero">
+                <h1>Ontario Tech Education Software Guide</h1>
+                <p class="hero-subtitle">Cost-Effective Web-Based Solutions Mapped to Curriculum Expectations</p>
+                <p class="hero-description">
+                    Helping tech teachers find free and low-cost web-based tools that are sufficient for curriculum requirements. 
+                    Access software from any device—no installation required, no expensive licenses, and equitable access for all students.
+                </p>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">11</div>
+                    <div class="stat-label">Courses Covered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$500-2000</div>
+                    <div class="stat-label">Average Savings Per Student/Year</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">35+</div>
+                    <div class="stat-label">Software Tools</div>
+                </div>
+            </div>
+
+            <!-- Key Benefits -->
+            <div class="resource-card">
+                <h3>🌟 Key Benefits of Web-Based Tools</h3>
+                <ul>
+                    <li>No installation or IT support required</li>
+                    <li>Accessible from any device (Chromebooks, tablets, home computers)</li>
+                    <li>Automatic updates - always current version</li>
+                    <li>Cloud storage - never lose work</li>
+                    <li>Real-time collaboration - better group projects</li>
+                    <li>Free or low-cost - equitable access for all students</li>
+                    <li>Same concepts taught as desktop versions</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-32);">
+                <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); margin-bottom: var(--space-16);">👇 Scroll down or use the navigation above to explore courses, compare software, and access resources</p>
+            </div>
+
+        </section>
+
+        <!-- Section 2: Courses -->
+        <section id="courses" class="page-section">
+            <h2 class="section-title">📚 Course Catalog</h2>
+            
+            <!-- Filters -->
+            <div class="filters">
+                <h3 style="margin-bottom: var(--space-16);">Filter Courses</h3>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label class="filter-label">Search by Course Code or Name</label>
+                        <input type="text" class="filter-input" id="search-input-courses" placeholder="e.g., TGJ2O, Photo Editing...">
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Grade Level</label>
+                        <select class="filter-select" id="grade-filter-courses">
+                            <option value="">All Grades</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Course Level</label>
+                        <select class="filter-select" id="level-filter-courses">
+                            <option value="">All Levels</option>
+                            <option value="Open">Open</option>
+                            <option value="University/College">University/College Prep</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-buttons">
+                    <button class="btn btn-secondary" id="clear-filters-courses">Clear Filters</button>
+                </div>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="course-grid" id="course-grid"></div>
+            
+            <!-- Course Detail (Expandable) -->
+            <div id="course-detail-expanded" class="course-detail-expanded" style="display: none;">
+                <div style="margin-bottom: var(--space-24);">
+                    <button class="btn btn-secondary" id="back-to-courses">← Back to Course Grid</button>
+                </div>
+                <div id="course-detail-content"></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Complete Software Comparison -->
+        <section id="comparison" class="page-section">
+            <h2 class="section-title">🔍 Complete Software Comparison</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-16); text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">All recommended desktop and web-based tools with curriculum connections. This comprehensive reference shows every software option—no filtering needed. Browse to find what you need!</p>
+            
+            <div id="software-table-container"></div>
+        </section>
+
+        <!-- Section 4: Resources -->
+        <section id="resources" class="page-section">
+            <h2 class="mb-24">Resources for Teachers</h2>
+            
+            <div class="resource-card">
+                <h3>📚 Quick Start Guide</h3>
+                <h4>Getting Started with Web-Based Tools</h4>
+                <ul>
+                    <li><strong>Step 1:</strong> Browse courses to find alternatives for your current software needs</li>
+                    <li><strong>Step 2:</strong> Review curriculum alignment to ensure tools meet expectations</li>
+                    <li><strong>Step 3:</strong> Test tools yourself before introducing to students</li>
+                    <li><strong>Step 4:</strong> Create student accounts (many offer free educational accounts)</li>
+                    <li><strong>Step 5:</strong> Prepare tutorials or walkthroughs for students</li>
+                </ul>
+
+                <h4>Implementation Tips</h4>
+                <ul>
+                    <li><strong>Start Small:</strong> Introduce one web-based tool at a time</li>
+                    <li><strong>Student Training:</strong> Dedicate first class to tool exploration</li>
+                    <li><strong>Bookmark Links:</strong> Create a class webpage with all tool links</li>
+                    <li><strong>Free Accounts:</strong> Many tools offer upgraded free accounts for educators</li>
+                    <li><strong>Backup Plans:</strong> Always have a backup activity if internet connectivity fails</li>
+                    <li><strong>Student Feedback:</strong> Survey students about their experience with web tools</li>
+                </ul>
+
+                <h4>Managing Multiple Tools</h4>
+                <ul>
+                    <li>Create a shared document with all tool URLs and login instructions</li>
+                    <li>Use a learning management system (Google Classroom, D2L) to organize links</li>
+                    <li>Set up a class GitHub or portfolio site for student work</li>
+                    <li>Encourage students to bookmark tools in their browser</li>
+                </ul>
+            </div>
+
+
+
+            <div class="resource-card">
+                <h3>💡 Curriculum Alignment Notes</h3>
+                <p><strong>Understanding Curriculum Codes:</strong></p>
+                <ul>
+                    <li><strong>A1, A2, etc.:</strong> Overall Expectations (fundamental knowledge areas)</li>
+                    <li><strong>B1, B2, B3:</strong> Specific Expectations (detailed skills and applications)</li>
+                    <li><strong>Example:</strong> A1 might cover "core concepts of design," while B3 could specify "creating media productions"</li>
+                </ul>
+                <p>All web-based alternatives in this guide are mapped to specific curriculum expectations to ensure they meet Ontario Ministry of Education requirements.</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>❓ Frequently Asked Questions</h3>
+                <h4>What if my students don't have internet at home?</h4>
+                <p>Many schools offer device lending programs or after-school lab access. Additionally, some web tools allow offline work with sync when reconnected.</p>
+
+                <h4>Are these tools really sufficient for curriculum requirements?</h4>
+                <p>Yes! Each recommendation has been carefully reviewed against curriculum expectations. While professional desktop software has more features, web-based tools provide everything needed for high school projects.</p>
+
+                <h4>What about assessment and evaluation?</h4>
+                <p>Web-based tools often make assessment easier with built-in sharing, commenting, and version history features. Students can submit work via links, and you can provide feedback directly in the tool.</p>
+
+                <h4>How do I handle students who want to use desktop software?</h4>
+                <p>That's great! Students with access to professional tools should be encouraged to use them. Web-based alternatives ensure all students have equal opportunities regardless of personal resources.</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>📧 Contact &amp; Feedback</h3>
+                <p>This guide is regularly updated based on teacher feedback and new web-based tools. If you have suggestions, questions, or have discovered an excellent web-based alternative, please share your feedback!</p>
+                <p style="margin-top: var(--space-16);"><strong>Contributions welcome:</strong> Help expand this guide by submitting new tools or curriculum mappings.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Course data
+        const coursesData = [
+            {
+                code: 'TAS1O',
+                name: 'Technology and the Skilled Trades - Grade 9',
+                level: 'Open',
+                grade: '9',
+                description: 'Hands-on course covering engineering design cycle, construction, transportation, hospitality, and communications technology',
+                software_categories: []
+            },
+            {
+                code: 'TAS2O',
+                name: 'Technology and the Skilled Trades - Grade 10',
+                level: 'Open',
+                grade: '10',
+                description: 'Continuation of TAS1O with more advanced project-based learning across multiple technology sectors',
+                software_categories: []
+            },
+            {
+                code: 'TGJ2O',
+                name: 'Communications Technology - Grade 10',
+                level: 'Open',
+                grade: '10',
+                description: 'Introduction to communications technology from a media perspective including TV/video, print, photography, and interactive media',
+                software_categories: [
+                    {
+                        category: 'Photo Editing & Graphic Design',
+                        desktop_options: [
+                            {
+                                name: 'Adobe Photoshop',
+                                cost: '$22.99-54.99/month',
+                                pros: ['Industry standard', 'Extensive features', 'Large tutorial base'],
+                                cons: ['Expensive subscription', 'Steep learning curve', 'Requires installation']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Pixlr',
+                                cost: 'Free (with ads) or $4.90/month premium',
+                                url: 'https://pixlr.com',
+                                curriculum_fit: 'Covers A1 (core concepts), B3 (creative skills) - layers, filters, selection tools, text editing',
+                                why_sufficient: 'Offers 90% of Photoshop features for high school projects. Supports PSD files, layers, masks, effects.',
+                                pros: ['No installation needed', 'Familiar interface', 'Supports PSD files'],
+                                cons: ['Ads in free version', 'Requires internet']
+                            },
+                            {
+                                name: 'Photopea',
+                                cost: 'Free (ad-supported) or $5/month',
+                                url: 'https://photopea.com',
+                                curriculum_fit: 'Covers A1, B3 - exact Photoshop interface clone, full layer support',
+                                why_sufficient: 'Nearly identical to Photoshop. Opens/saves PSD, XCF, Sketch files. Perfect for curriculum.',
+                                pros: ['Photoshop clone interface', 'Opens PSD files', 'Advanced features'],
+                                cons: ['Ads in free version', 'Slower with large files']
+                            }
+                        ]
+                    },
+                    {
+                        category: 'Video Editing',
+                        desktop_options: [
+                            {
+                                name: 'Adobe Premiere Pro',
+                                cost: '$22.99/month',
+                                pros: ['Industry standard', 'Advanced features', 'Adobe integration'],
+                                cons: ['Expensive subscription', 'Hardware intensive', 'Requires installation']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Clipchamp',
+                                cost: 'Free tier; Premium $11.99/month',
+                                url: 'https://clipchamp.com',
+                                curriculum_fit: 'Covers A1 (media production), B1 (project management) - multi-track, transitions, effects',
+                                why_sufficient: '1080p export (4K paid), templates, stock media, timeline editing. Built into Windows 11.',
+                                pros: ['Built into Windows 11', 'Cloud-based', 'Easy to learn'],
+                                cons: ['Watermark on free version', 'Limited to 1080p free']
+                            },
+                            {
+                                name: 'Kapwing',
+                                cost: 'Free tier; Pro $16/month',
+                                url: 'https://kapwing.com',
+                                curriculum_fit: 'Covers B1, B3 - collaborative editing, subtitles, effects',
+                                why_sufficient: 'Team collaboration, auto-subtitles, templates. Great for group projects.',
+                                pros: ['Collaborative editing', 'AI features included', 'Template library'],
+                                cons: ['Watermark on free tier', 'Limited exports free']
+                            }
+                        ]
+                    },
+                    {
+                        category: 'Animation',
+                        desktop_options: [
+                            {
+                                name: 'Adobe Animate',
+                                cost: '$22.99/month',
+                                pros: ['Vector animation', 'Interactive content', 'HTML5 export'],
+                                cons: ['Expensive subscription', 'Complex interface', 'Subscription model']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Wick Editor',
+                                cost: 'Free (open-source)',
+                                url: 'https://wickeditor.com',
+                                curriculum_fit: 'Covers A1 (animation techniques), B3 (creative skills) - timeline, drawing, coding',
+                                why_sufficient: 'Frame-by-frame and tweening. Code integration for interactive projects. HTML5 export.',
+                                pros: ['Completely free', 'Web-based', 'Supports coding'],
+                                cons: ['Less polished UI', 'Smaller community']
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                code: 'TEJ2O',
+                name: 'Computer Technology - Grade 10',
+                level: 'Open',
+                grade: '10',
+                description: 'Introduction to computer systems, networking, electronics, and robotics with Arduino programming',
+                software_categories: [
+                    {
+                        category: 'Programming IDE',
+                        desktop_options: [
+                            {
+                                name: 'Visual Studio Code',
+                                cost: 'Free',
+                                pros: ['Free and open-source', 'Extensive extensions', 'Industry standard'],
+                                cons: ['Requires installation', 'Setup complexity', 'Extension management']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Replit',
+                                cost: 'Free tier; Hacker $7/month',
+                                url: 'https://replit.com',
+                                curriculum_fit: 'Covers A1 (programming fundamentals), B2 (interfacing) - C++, Python, Java, collaboration',
+                                why_sufficient: 'Zero setup. 50+ languages. Built-in collaboration. Instant execution. Perfect for students.',
+                                pros: ['No installation', 'Collaborative coding', 'Built-in debugger'],
+                                cons: ['Requires internet', 'Free tier limits']
+                            }
+                        ]
+                    },
+                    {
+                        category: 'Arduino Simulation & Circuit Design',
+                        desktop_options: [
+                            {
+                                name: 'Arduino IDE + Hardware Kit',
+                                cost: '$30-100 per student kit',
+                                pros: ['Real hardware experience', 'Authentic learning', 'Tactile feedback'],
+                                cons: ['Costly per student', 'Components break/lost', 'Requires lab space']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Tinkercad Circuits',
+                                cost: 'Free',
+                                url: 'https://tinkercad.com/circuits',
+                                curriculum_fit: 'Covers A1 (electronics), B1 (digital logic), B2 (Arduino) - full simulation, breadboard view',
+                                why_sufficient: 'Complete Arduino environment. Visual circuits. Code in blocks or C++. Simulates sensors, motors, LCDs. No hardware cost.',
+                                pros: ['Completely free', 'Visual breadboard', 'No hardware needed', 'Auto-graded lessons'],
+                                cons: ['Requires internet', 'Not physical hardware']
+                            }
+                        ]
+                    },
+                    {
+                        category: 'Digital Logic Simulation',
+                        desktop_options: [
+                            {
+                                name: 'Logisim / Multisim',
+                                cost: 'Free (Logisim) or $1500+ (Multisim)',
+                                pros: ['Professional features', 'Comprehensive tools', 'Industry acceptance'],
+                                cons: ['Installation required', 'Multisim very expensive', 'Complex setup']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'CircuitVerse',
+                                cost: 'Free (open-source)',
+                                url: 'https://circuitverse.org',
+                                curriculum_fit: 'Covers B1 (digital logic), A2 (Boolean algebra) - logic gates, truth tables, complex circuits',
+                                why_sufficient: 'Built for education. Interactive simulations. Complex digital logic. Circuit sharing/embedding.',
+                                pros: ['Education-focused', 'Collaborative features', 'Mobile-friendly'],
+                                cons: ['No analog simulation', 'Digital logic only']
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                code: 'TGJ3M',
+                name: 'Communications Technology - Grade 11',
+                level: 'University/College',
+                grade: '11',
+                description: 'Advanced media production in live, recorded, and graphic communications',
+                software_categories: [
+                    {
+                        category: 'Vector Graphics',
+                        desktop_options: [
+                            {
+                                name: 'Adobe Illustrator',
+                                cost: '$22.99/month',
+                                pros: ['Industry standard', 'Advanced vector tools', 'Print optimization'],
+                                cons: ['Expensive subscription', 'Complex for beginners', 'Installation required']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Figma',
+                                cost: 'Free for education',
+                                url: 'https://figma.com',
+                                curriculum_fit: 'Covers A2 (software), B1 (project management), B3 (productions) - vectors, prototyping, collaboration',
+                                why_sufficient: 'Industry-standard for web/UI. Real-time collaboration. Version history. Professional exports. Free for students.',
+                                pros: ['Real-time collaboration', 'Free for education', 'Cloud-based'],
+                                cons: ['Internet required', 'UI/UX focused']
+                            },
+                            {
+                                name: 'Vectr',
+                                cost: 'Free',
+                                url: 'https://vectr.com',
+                                curriculum_fit: 'Covers B3 - vector drawing, shapes, pen tool, SVG export',
+                                why_sufficient: 'Simple vector editor. Perfect for logos, icons, basic illustrations. Real-time collaboration.',
+                                pros: ['Completely free', 'Easy to learn', 'Cross-platform'],
+                                cons: ['Limited advanced features', 'No CMYK support']
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                code: 'TDJ2O',
+                name: 'Technological Design - Grade 10',
+                level: 'Open',
+                grade: '10',
+                description: 'Design process, 3D modeling, prototyping, and manufacturing preparation',
+                software_categories: [
+                    {
+                        category: '3D CAD Modeling',
+                        desktop_options: [
+                            {
+                                name: 'Fusion 360',
+                                cost: 'Free for students (normally $545/year)',
+                                pros: ['Professional features', 'CAD/CAM integrated', 'Cloud-based option'],
+                                cons: ['Requires sign-up', 'Complex for beginners', 'Still needs download']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Tinkercad',
+                                cost: 'Free',
+                                url: 'https://tinkercad.com',
+                                curriculum_fit: 'Covers A1 (design fundamentals), B1 (3D modeling) - shape modeling, CodeBlocks, STL export',
+                                why_sufficient: 'Perfect for beginners. Block-based 3D. Exports to 3D printers. CodeBlocks teaches parametric design.',
+                                pros: ['Very beginner-friendly', 'Completely free', '3D print ready', 'CodeBlocks feature'],
+                                cons: ['Limited for complex models', 'Less professional features']
+                            },
+                            {
+                                name: 'Onshape',
+                                cost: 'Free for education/public projects',
+                                url: 'https://onshape.com',
+                                curriculum_fit: 'Covers A1, B1 - professional parametric CAD, assemblies, technical drawings, version control',
+                                why_sufficient: 'Professional-grade CAD used in industry. Full parametric history. Assembly design. Free for education.',
+                                pros: ['Professional features', 'Cloud collaboration', 'Version history', 'Free for education'],
+                                cons: ['Steeper learning curve', 'Public projects on free']
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                code: 'TMJ3M',
+                name: 'Manufacturing Technology - Grade 11',
+                level: 'University/College',
+                grade: '11',
+                description: 'CNC programming, CAM toolpaths, process planning, quality assurance',
+                software_categories: [
+                    {
+                        category: 'CAD/CAM for CNC',
+                        desktop_options: [
+                            {
+                                name: 'Mastercam',
+                                cost: '$6,370+ per license',
+                                pros: ['Industry standard', 'Advanced CAM features', 'Comprehensive tooling'],
+                                cons: ['Extremely expensive', 'Very complex', 'Requires powerful PC']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'Fusion 360 (Education)',
+                                cost: 'Free for students/educators',
+                                url: 'https://autodesk.com/products/fusion-360/education',
+                                curriculum_fit: 'Covers B1 (CNC programming), A2 (process planning) - CAD + CAM, toolpaths, G-code simulation',
+                                why_sufficient: 'Full CAM capabilities. G-code generation. Toolpath simulation. Same as industry. Free for education.',
+                                pros: ['Professional CAM features', 'Free for education', 'Cloud-based option', 'Industry-used tool'],
+                                cons: ['Educational verification needed', 'Some features need download']
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                code: 'TCJ2O',
+                name: 'Construction Technology - Grade 10',
+                level: 'Open',
+                grade: '10',
+                description: 'Building construction fundamentals, materials, tools, and project planning',
+                software_categories: [
+                    {
+                        category: 'Building Design & Planning',
+                        desktop_options: [
+                            {
+                                name: 'AutoCAD',
+                                cost: 'Free for students (normally $1865/year)',
+                                pros: ['Industry standard', 'Comprehensive features', 'Professional training'],
+                                cons: ['Requires installation', 'Complex for beginners', 'Large file size']
+                            }
+                        ],
+                        web_alternatives: [
+                            {
+                                name: 'SketchUp Free',
+                                cost: 'Free (web version)',
+                                url: 'https://app.sketchup.com',
+                                curriculum_fit: 'Covers A1 (design fundamentals), B1 (technical drawings) - 3D modeling, measurements, material estimation',
+                                why_sufficient: 'Intuitive 3D modeling. Popular in construction industry. Easy measurement tools. Free cloud storage.',
+                                pros: ['Very intuitive', 'Industry-used', 'Free cloud storage', 'Large model library'],
+                                cons: ['Limited to 10 active models', 'Premium features locked']
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // State management
+        let currentCourse = null;
+        let filteredCourses = [...coursesData];
+        let currentSection = 'home';
+
+        // Initialize app
+        function init() {
+            renderCourseGrid();
+            setupComparisonTool();
+            setupEventListeners();
+            setupScrollSpy();
+            
+            // Handle initial hash
+            if (window.location.hash) {
+                const section = window.location.hash.substring(1);
+                scrollToSection(section);
+            }
+        }
+
+        // Render course grid
+        function renderCourseGrid() {
+            const grid = document.getElementById('course-grid');
+            grid.innerHTML = '';
+
+            if (filteredCourses.length === 0) {
+                grid.innerHTML = '<p style="text-align: center; color: var(--color-text-secondary); grid-column: 1/-1;">No courses match your filters.</p>';
+                return;
+            }
+
+            filteredCourses.forEach(course => {
+                const card = document.createElement('div');
+                card.className = 'course-card';
+                card.innerHTML = `
+                    <div class="course-code">${course.code}</div>
+                    <h3 class="course-name">${course.name}</h3>
+                    <div class="course-level">Grade ${course.grade} • ${course.level}</div>
+                    <p class="course-description">${course.description}</p>
+                `;
+                card.addEventListener('click', () => {
+                    showCourseDetail(course);
+                    // Scroll to expanded detail
+                    setTimeout(() => {
+                        const detailElement = document.getElementById('course-detail-expanded');
+                        smoothScrollTo(detailElement, 100);
+                    }, 100);
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        // Smooth scroll utility function
+        function smoothScrollTo(element, offset = 100) {
+            setTimeout(() => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 150);
+        }
+
+        // Show course detail (expand in Courses section)
+        function showCourseDetail(course) {
+            currentCourse = course;
+            const detailSection = document.getElementById('course-detail-expanded');
+            const content = document.getElementById('course-detail-content');
+            
+            detailSection.style.display = 'block';
+            
+            let html = `
+                <div class="course-header">
+                    <div class="course-code">${course.code}</div>
+                    <h1 class="course-title">${course.name}</h1>
+                    <div class="course-meta">
+                        <span>Grade ${course.grade}</span>
+                        <span>•</span>
+                        <span>${course.level}</span>
+                    </div>
+                    <p style="margin-top: var(--space-16); color: var(--color-text-secondary);">${course.description}</p>
+                </div>
+
+                <div class="software-categories">
+            `;
+
+            course.software_categories.forEach((category, index) => {
+                html += `
+                    <div class="category-section" data-category="${index}">
+                        <div class="category-header">
+                            <h2 class="category-title">📦 ${category.category}</h2>
+                            <span class="category-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="software-comparison">
+                                <div class="software-type-section">
+                                    <h3 class="software-type-title">Desktop Software</h3>
+                                    <div class="software-cards">
+                `;
+
+                category.desktop_options.forEach(desktop => {
+                    const isFree = desktop.cost.toLowerCase().includes('free');
+                    html += `
+                        <div class="software-card desktop">
+                            <h4 class="software-name">🖥️ ${desktop.name}</h4>
+                            <div class="software-cost">${desktop.cost}${isFree ? '<span class="free-badge">FREE</span>' : ''}</div>
+                            <div class="software-section">
+                                <div class="software-section-title">✓ Pros</div>
+                                <ul class="pros-cons-list pros">
+                                    ${desktop.pros.map(pro => `<li>${pro}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="software-section">
+                                <div class="software-section-title">✗ Cons</div>
+                                <ul class="pros-cons-list cons">
+                                    ${desktop.cons.map(con => `<li>${con}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                                    </div>
+                                </div>
+                                <div class="software-type-section">
+                                    <h3 class="software-type-title">Web-Based Alternatives ✨</h3>
+                                    <div class="software-cards">
+                `;
+
+                category.web_alternatives.forEach(web => {
+                    const isFree = web.cost.toLowerCase().includes('free');
+                    html += `
+                        <div class="software-card web">
+                            <h4 class="software-name">🌐 ${web.name}</h4>
+                            <div class="software-cost">${web.cost}${isFree ? '<span class="free-badge">FREE</span>' : ''}</div>
+                            <a href="${web.url}" target="_blank" class="software-url">🔗 ${web.url}</a>
+                            <div class="software-section">
+                                <div class="software-section-title">📚 Curriculum Alignment</div>
+                                <div class="software-section-content">${web.curriculum_fit}</div>
+                            </div>
+                            <div class="software-section">
+                                <div class="software-section-title">✅ Why It's Sufficient</div>
+                                <div class="software-section-content">${web.why_sufficient}</div>
+                            </div>
+                            <div class="software-section">
+                                <div class="software-section-title">✓ Pros</div>
+                                <ul class="pros-cons-list pros">
+                                    ${web.pros.map(pro => `<li>${pro}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="software-section">
+                                <div class="software-section-title">✗ Cons</div>
+                                <ul class="pros-cons-list cons">
+                                    ${web.cons.map(con => `<li>${con}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            content.innerHTML = html;
+
+            // Add accordion functionality with smooth scroll
+            document.querySelectorAll('.category-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const section = this.parentElement;
+                    const wasExpanded = section.classList.contains('expanded');
+                    section.classList.toggle('expanded');
+                    
+                    // Scroll to show expanded content
+                    if (!wasExpanded) {
+                        setTimeout(() => {
+                            smoothScrollTo(section, 80);
+                        }, 100);
+                    }
+                });
+            });
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        // Setup scroll spy for active navigation
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-100px 0px -66%',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        currentSection = sectionId;
+                        
+                        // Update active nav link
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.dataset.section === sectionId) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // All software data with education rankings
+        const allSoftware = [
+            { name: 'Pixlr', type: 'Web-Based', education_rank: 4, cost: 'Free (with ads) or $4.90/month premium', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M'], category: 'Photo Editing & Graphic Design', description: 'Browser-based photo editor with Photoshop-like interface', why_sufficient: 'Offers 90% of Photoshop features. Supports PSD files, layers, masks, effects, filters, and text editing', pros: ['No installation', 'Familiar interface', 'Supports PSD files', 'Cloud storage'], cons: ['Ads in free version', 'Requires internet', 'Slower with large files'], url: 'https://pixlr.com', free_badge: true, education_notes: 'Great intro to photo editing concepts, free tier sufficient for high school projects' },
+            { name: 'Photopea', type: 'Web-Based', education_rank: 4, cost: 'Free (ad-supported) or $5/month', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'Photo Editing & Graphic Design', description: 'Exact Photoshop clone that runs entirely in browser', why_sufficient: 'Nearly identical to Photoshop interface and features. Opens/saves PSD, XCF, Sketch files', pros: ['Photoshop clone', 'Opens PSD files', 'Advanced features', 'Works offline'], cons: ['Ads in free version', 'Slower with large files'], url: 'https://photopea.com', free_badge: true, education_notes: 'Perfect for schools transitioning from Photoshop, professional-grade at no cost' },
+            { name: 'Photoshop on the Web', type: 'Web-Based', education_rank: 3, cost: '$7.99/month or $69.99/year (Mobile & Web plan)', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'Photo Editing & Graphic Design', description: 'Real Photoshop in browser with cloud sync and Firefly AI', why_sufficient: 'Actual Photoshop interface in browser, syncs with desktop/mobile, includes Firefly generative AI, most features available on web', pros: ['Actual Photoshop', 'Web-based (no install)', 'Syncs across devices', 'Firefly AI included', 'Much cheaper than desktop', 'Cloud storage'], cons: ['Requires subscription ($69-240/year)', 'Not all desktop features on web version', 'Needs Adobe account'], url: 'https://www.adobe.com/products/photoshop/web', free_badge: false, education_notes: 'GOOD MIDDLE OPTION: More affordable than full Creative Cloud, actual Photoshop, but Photopea/Pixlr still better value (free). Consider for advanced students or school budgets.' },
+            { name: 'Adobe Photoshop (Desktop)', type: 'Desktop', education_rank: 1, cost: '$22.99-54.99/month or $19.99-34.49/month', connects_to: ['TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'Photo Editing & Graphic Design', description: 'Industry-standard professional photo editor (desktop only, expensive)', why_sufficient: 'Complete professional toolset, but cost-prohibitive for schools', pros: ['Industry standard', 'Extensive features', 'Large tutorial base'], cons: ['Expensive subscription ($20-55/month)', 'Steep learning curve', 'Requires installation'], url: null, free_badge: false, education_notes: 'NOT RECOMMENDED - Use web version instead (Photoshop on the Web at $69.99/year or Photopea/Pixlr free)' },
+            { name: 'Adobe Firefly', type: 'Web-Based', education_rank: 4, cost: 'Free (with limits) or Firefly Pro $4.99/month', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'AI Image Generation & Design', description: 'Free generative AI tool for creating and editing images with text prompts', why_sufficient: 'Modern AI-powered creativity, text-to-image generation, image editing and remixing, completely free with generous limits', pros: ['Completely free', 'AI-powered', 'Text-to-image generation', 'Image editing', 'Web-based', 'Commercially safe AI', 'Modern creative tool'], cons: ['Requires Adobe account', 'Monthly usage limits', 'Limited features in free tier', 'Not full design tool', 'Requires internet'], url: 'https://firefly.adobe.com', free_badge: true, education_notes: 'EXCELLENT FOR EDUCATION: Completely free, teaches AI creativity, perfect for modern design thinking, accessible to all students. Great supplement to traditional tools.' },
+            { name: 'Firefly Boards', type: 'Web-Based', education_rank: 4, cost: 'Free', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M'], category: 'Mood Boarding & Collaborative Design', description: 'AI-powered collaborative mood boarding and brainstorming canvas', why_sufficient: 'Visual collaboration for design thinking, mood board creation with AI image generation, remix and style features, perfect for group projects', pros: ['Completely free', 'AI-powered', 'Real-time collaboration', 'Infinite canvas', 'Image generation', 'Style remixing', 'Design thinking focus'], cons: ['Requires Adobe account', 'Requires internet', 'Limited to mood boarding use case', 'Still relatively new tool'], url: 'https://www.adobe.com/products/firefly/boards', free_badge: true, education_notes: 'EXCELLENT FOR COLLABORATIVE PROJECTS: Free, teaches design thinking and mood boarding, great for group projects, modern creative tool with AI.' },
+            { name: 'Canva', type: 'Web-Based', education_rank: 4, cost: 'Free or $150/year premium', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M'], category: 'Graphic Design', description: 'Template-based design tool for quick graphics creation', why_sufficient: 'Pre-made templates speed up design process, drag-and-drop interface, suitable for student projects, free for K-12', pros: ['Easy to use', 'Free for K-12', 'Templates included', 'No design skills needed', 'Collaborative'], cons: ['Limited customization', 'Template-based approach', 'Not for advanced design'], url: 'https://canva.com', free_badge: true, education_notes: 'Excellent for absolute beginners, 100% free for K-12 schools, fastest learning curve for graphic design' },
+            { name: 'Adobe Express', type: 'Web-Based', education_rank: 4, cost: 'Free or $9.99/month Premium', connects_to: ['TGJ2O', 'TGJ3M'], category: 'Graphic Design', description: 'Free web-based design tool with AI features and templates', why_sufficient: 'Quick design creation with Adobe quality, AI features, templates, easy-to-use interface, completely free', pros: ['Adobe quality', 'Completely free', 'Templates included', 'Web-based', 'AI features', 'Easy for beginners', 'Cloud storage'], cons: ['Limited advanced features', 'Premium tier available', 'Beginner-focused', 'Not as powerful as Photoshop'], url: 'https://adobe.com/express', free_badge: true, education_notes: 'EXCELLENT INTRO TOOL: Free design tool with AI, perfect learning curve for K-12, teaches design fundamentals.' },
+            { name: 'Figma', type: 'Web-Based', education_rank: 5, cost: 'Free for education', connects_to: ['TAS1O', 'TAS2O', 'TGJ3M', 'TGJ4M'], category: 'Vector Graphics', description: 'Industry-standard design and prototyping platform', why_sufficient: 'Real-time collaboration, professional vector tools, version history, used in industry', pros: ['Real-time collaboration', 'Free for education', 'Cloud-based', 'Industry standard'], cons: ['Internet required', 'UI/UX focused', 'No CMYK'], url: 'https://figma.com', free_badge: true, education_notes: 'TOP CHOICE: Industry-used, free education accounts, teaches professional workflows' },
+            { name: 'Vectr', type: 'Web-Based', education_rank: 4, cost: 'Free', connects_to: ['TGJ2O', 'TGJ3M'], category: 'Vector Graphics', description: 'Simple browser-based vector graphics editor', why_sufficient: 'Perfect for beginners. Supports pen tool, shapes, text, SVG export', pros: ['Completely free', 'Easy to learn', 'Cross-platform', 'Collaboration'], cons: ['Limited advanced features', 'No CMYK support'], url: 'https://vectr.com', free_badge: true, education_notes: 'Great starter for vector graphics, easiest learning curve' },
+            { name: 'Adobe Illustrator', type: 'Desktop', education_rank: 1, cost: '$22.99/month', connects_to: ['TGJ3M', 'TGJ4M'], category: 'Vector Graphics', description: 'Professional vector graphics software', why_sufficient: 'Industry-standard for advanced vector design and print production', pros: ['Industry standard', 'Advanced tools', 'Print optimization'], cons: ['Expensive', 'Complex for beginners', 'Installation required'], url: null, free_badge: false, education_notes: 'Cost prohibitive, use Figma instead' },
+            { name: 'CorelDRAW', type: 'Desktop', education_rank: 2, cost: '$549 one-time or subscription', connects_to: ['TGJ3M'], category: 'Vector Graphics', description: 'Professional vector graphics and design software', why_sufficient: 'Comprehensive vector tools for design and illustration', pros: ['Professional features', 'One-time purchase option'], cons: ['Expensive', 'Windows-focused', 'Steep learning curve'], url: null, free_badge: false, education_notes: 'Too expensive for schools' },
+            { name: 'Clipchamp', type: 'Web-Based', education_rank: 5, cost: 'Free tier; Premium $11.99/month', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'Video Editing', description: 'Browser-based video editor built into Windows 11', why_sufficient: 'Multi-track editing, transitions, effects, 1080p export (4K paid), templates, stock media', pros: ['Built into Windows 11', 'Cloud-based', 'Easy to learn', 'Free tier available'], cons: ['Watermark on free', 'Limited to 1080p free'], url: 'https://clipchamp.com', free_badge: true, education_notes: 'TOP CHOICE: Pre-installed on school computers, intuitive, free tier meets K-12 needs' },
+            { name: 'Kapwing', type: 'Web-Based', education_rank: 4, cost: 'Free tier; Pro $16/month', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'Video Editing', description: 'Collaborative online video editing platform', why_sufficient: 'Real-time collaboration, auto-subtitles, effects, templates, perfect for group projects', pros: ['Collaborative editing', 'AI features', 'Template library', 'Easy interface'], cons: ['Watermark on free', 'Limited exports free'], url: 'https://kapwing.com', free_badge: true, education_notes: 'Excellent for collaborative student projects, teaches real-world workflows' },
+            { name: 'WeVideo', type: 'Web-Based', education_rank: 3, cost: 'Free tier available; Educational pricing', connects_to: ['TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'Video Editing', description: 'Cloud-based video editor for education', why_sufficient: 'Collaboration, cloud storage, educational focus, timeline editing', pros: ['Educational focus', 'Cloud-based', 'Collaboration', 'Educational pricing'], cons: ['Requires account', 'Processing time'], url: 'https://wevideo.com', free_badge: true, education_notes: 'Good for groups but Clipchamp offers better free tier value' },
+            { name: 'Adobe Premiere Pro', type: 'Desktop', education_rank: 1, cost: '$22.99/month', connects_to: ['TGJ2O', 'TGJ3M', 'TGJ4M'], category: 'Video Editing', description: 'Industry-standard professional video editor', why_sufficient: 'Advanced timeline editing, effects, color grading, professional export options', pros: ['Industry standard', 'Advanced features', 'Adobe integration'], cons: ['Expensive', 'Hardware intensive', 'Installation required'], url: null, free_badge: false, education_notes: 'Not recommended for K-12, use Clipchamp instead' },
+            { name: 'DaVinci Resolve', type: 'Desktop (Free version available)', education_rank: 2, cost: 'Free or $295 one-time', connects_to: ['TGJ3M', 'TGJ4M'], category: 'Video Editing', description: 'Professional video editor with free tier', why_sufficient: 'Professional-grade editing, color grading, effects at zero cost for free version', pros: ['Free professional version', 'Industry-used', 'Advanced features'], cons: ['Requires download', 'Steep learning curve', 'GPU intensive'], url: null, free_badge: true, education_notes: 'Professional but steep learning curve, Clipchamp better for K-12' },
+            { name: 'Wick Editor', type: 'Web-Based', education_rank: 4, cost: 'Free (open-source)', connects_to: ['TAS1O', 'TAS2O', 'TGJ2O', 'TGJ4M'], category: 'Animation', description: 'Browser-based animation tool with code integration', why_sufficient: 'Frame-by-frame and tweening animation, code support, HTML5 export, interactive projects', pros: ['Completely free', 'Web-based', 'Supports coding', 'Open-source'], cons: ['Less polished UI', 'Smaller community'], url: 'https://wickeditor.com', free_badge: true, education_notes: 'Great for teaching animation + coding together, teaches real web technology' },
+            { name: 'Animaker', type: 'Web-Based', education_rank: 3, cost: 'Free tier; Basic $10/month', connects_to: ['TGJ2O', 'TGJ4M'], category: 'Animation', description: 'Character animation tool with templates', why_sufficient: 'Pre-made characters, templates, voiceover, motion graphics, suitable for explainers', pros: ['Easy to use', 'Templates included', 'Text-to-speech', 'Music library'], cons: ['Limited free tier', 'Watermark on free', 'Template-based'], url: 'https://animaker.com', free_badge: true, education_notes: 'Good for beginners, but Wick Editor better for teaching animation concepts' },
+            { name: 'Synfig Studio', type: 'Web-Based / Desktop (Open-source)', education_rank: 2, cost: 'Free', connects_to: ['TGJ3M', 'TGJ4M'], category: 'Animation', description: 'Open-source vector animation software', why_sufficient: 'Professional vector animation, bone tools, tweening, export to video formats', pros: ['Completely free', 'Open-source', 'Professional features'], cons: ['Steeper learning curve', 'Fewer tutorials', 'Less community support'], url: 'https://www.synfig.org', free_badge: true, education_notes: 'Professional tool but steep for K-12, better for advanced students' },
+            { name: 'Adobe Animate', type: 'Desktop', education_rank: 1, cost: '$22.99/month', connects_to: ['TGJ2O', 'TGJ4M'], category: 'Animation', description: 'Vector animation software for interactive content', why_sufficient: 'Vector animation, timeline editing, HTML5 export, interactive media', pros: ['Industry standard', 'Vector animation', 'HTML5 export'], cons: ['Expensive', 'Complex', 'Subscription model'], url: null, free_badge: false, education_notes: 'Not recommended for schools, use Wick Editor instead' },
+            { name: 'TwistedWave', type: 'Web-Based', education_rank: 3, cost: 'Free or $39 one-time', connects_to: ['TAS1O', 'TGJ2O', 'TGJ3M'], category: 'Audio Editing', description: 'Online audio editor for recording and editing', why_sufficient: 'Multi-track editing, effects, noise reduction, export to multiple formats', pros: ['Web-based', 'No installation', 'Professional features', 'One-time purchase option'], cons: ['Requires account', 'Limited free version'], url: 'https://twistedwave.com/online', free_badge: true, education_notes: 'Good free option, better than Adobe economically' },
+            { name: 'Soundtrap', type: 'Web-Based', education_rank: 4, cost: 'Free tier; Premium $9.99/month', connects_to: ['TAS1O', 'TGJ2O'], category: 'Audio/Music Production', description: 'Cloud-based music production platform', why_sufficient: 'Loop library, music creation, recording, collaboration, export to audio files', pros: ['Easy to use', 'Loop library', 'Collaboration', 'Music creation focus'], cons: ['Limited free tier', 'Premium needed for full features'], url: 'https://soundtrap.com', free_badge: true, education_notes: 'Excellent for music classes, collaborative features great for groups' },
+            { name: 'Audacity', type: 'Desktop (Free, open-source)', education_rank: 4, cost: 'Free', connects_to: ['TAS1O', 'TGJ2O', 'TGJ3M'], category: 'Audio Editing', description: 'Free, open-source audio editor', why_sufficient: 'Multi-track editing, effects, noise reduction, works on all platforms', pros: ['Completely free', 'Open-source', 'Cross-platform', 'Professional features'], cons: ['Requires download', 'Older UI', 'Learning curve'], url: 'https://audacityteam.org', free_badge: true, education_notes: 'Gold standard free option, professional-grade at no cost' },
+            { name: 'Adobe Audition', type: 'Desktop', education_rank: 1, cost: '$22.99/month', connects_to: ['TGJ2O', 'TGJ3M'], category: 'Audio Editing', description: 'Professional audio editing software', why_sufficient: 'Advanced multi-track editing, effects, noise reduction, professional audio production', pros: ['Industry standard', 'Advanced features', 'Integration with Adobe'], cons: ['Expensive', 'Subscription model', 'Installation required'], url: null, free_badge: false, education_notes: 'Not recommended, Audacity provides same capabilities for free' },
+            { name: 'Replit', type: 'Web-Based', education_rank: 5, cost: 'Free tier; Hacker $7/month', connects_to: ['TAS1O', 'TAS2O', 'TEJ2O', 'TEJ3M'], category: 'Programming IDE', description: 'Cloud-based coding environment for multiple languages', why_sufficient: 'Zero setup, 50+ languages, instant execution, real-time collaboration, built-in debugger', pros: ['No installation', 'Collaborative coding', 'Built-in debugger', 'Instant setup'], cons: ['Requires internet', 'Free tier limitations', 'CPU/memory limits'], url: 'https://replit.com', free_badge: true, education_notes: 'TOP CHOICE: Zero barriers to entry, students code in seconds, perfect for K-12' },
+            { name: 'VS Code for Web', type: 'Web-Based', education_rank: 3, cost: 'Free', connects_to: ['TEJ2O', 'TEJ3M'], category: 'Programming IDE', description: 'Full VS Code environment in browser', why_sufficient: 'Same interface as desktop VS Code, GitHub integration, no installation needed', pros: ['Full VS Code', 'Free', 'GitHub integration', 'Microsoft-backed'], cons: ['Requires internet', 'Limited extensions', 'GitHub account needed'], url: 'https://vscode.dev', free_badge: true, education_notes: 'Good but Replit is easier for beginners' },
+            { name: 'Visual Studio Code', type: 'Desktop', education_rank: 4, cost: 'Free', connects_to: ['TEJ2O', 'TEJ3M'], category: 'Programming IDE', description: 'Free, open-source code editor', why_sufficient: 'Extensive extensions, industry standard, supports all major languages', pros: ['Free', 'Extensive extensions', 'Industry standard'], cons: ['Requires installation', 'Setup complexity', 'Extension management'], url: null, free_badge: true, education_notes: 'Excellent free option but Replit better for classroom due to zero setup' },
+            { name: 'Tinkercad Circuits', type: 'Web-Based', education_rank: 5, cost: 'Free', connects_to: ['TAS1O', 'TAS2O', 'TEJ2O', 'TEJ3M'], category: 'Arduino Simulation', description: 'Virtual Arduino simulator with breadboard view', why_sufficient: 'Complete Arduino environment, visual circuits, code blocks/C++, no hardware needed, auto-graded lessons', pros: ['Completely free', 'Visual breadboard', 'No hardware', 'Extensive components'], cons: ['Requires internet', 'Not physical hardware', 'Simulation limitations'], url: 'https://tinkercad.com/circuits', free_badge: true, education_notes: 'TOP CHOICE: Perfect intro to Arduino, no cost barrier, visual learning, eliminates hardware management' },
+            { name: 'CircuitVerse', type: 'Web-Based', education_rank: 4, cost: 'Free (open-source)', connects_to: ['TEJ2O', 'TEJ3M'], category: 'Digital Logic Simulation', description: 'Educational digital logic simulator', why_sufficient: 'Logic gates, truth tables, complex circuits, built for education, interactive simulations', pros: ['Education-focused', 'Collaborative', 'Mobile-friendly', 'Free'], cons: ['Digital only', 'No analog simulation', 'Smaller community'], url: 'https://circuitverse.org', free_badge: true, education_notes: 'Excellent for teaching digital logic, built specifically for education' },
+            { name: 'Arduino IDE', type: 'Desktop', education_rank: 3, cost: 'Free', connects_to: ['TEJ2O', 'TEJ3M'], category: 'Arduino Programming', description: 'Official Arduino programming environment', why_sufficient: 'Official Arduino tool, works with real hardware, full programming capabilities', pros: ['Official Arduino tool', 'Free', 'Large community', 'Extensive libraries'], cons: ['Requires installation', 'Less beginner-friendly', 'Hardware needed for real projects'], url: null, free_badge: true, education_notes: 'Good for hands-on but Tinkercad better for learning fundamentals' },
+            { name: 'Logisim', type: 'Desktop', education_rank: 2, cost: 'Free', connects_to: ['TEJ2O'], category: 'Digital Logic Simulation', description: 'Free digital logic simulator', why_sufficient: 'Logic gates, circuits, educational tool, no cost barrier', pros: ['Free', 'Educational tool', 'Open-source'], cons: ['Requires installation', 'Smaller community', 'Dated interface'], url: null, free_badge: true, education_notes: 'Free but CircuitVerse superior for K-12 (web-based, modern)' },
+            { name: 'Multisim', type: 'Desktop', education_rank: 1, cost: '$1,500+', connects_to: ['TEJ2O'], category: 'Electronics Simulation', description: 'Professional electronics simulation software', why_sufficient: 'Comprehensive analog and digital circuit simulation', pros: ['Professional features', 'Comprehensive'], cons: ['Very expensive', 'Complex', 'Not practical for schools'], url: null, free_badge: false, education_notes: 'Not recommended for K-12, use CircuitVerse instead' },
+            { name: 'Tinkercad', type: 'Web-Based', education_rank: 5, cost: 'Free', connects_to: ['TAS1O', 'TAS2O', 'TDJ2O'], category: '3D CAD (Beginner)', description: 'Beginner-friendly 3D design tool', why_sufficient: 'Block-based 3D modeling, STL export for 3D printing, CodeBlocks for parametric design, cloud storage', pros: ['Very beginner-friendly', 'Completely free', '3D print ready', 'CodeBlocks feature'], cons: ['Limited for complex models', 'Less professional features'], url: 'https://tinkercad.com', free_badge: true, education_notes: 'TOP CHOICE: Perfect intro to 3D CAD, easiest learning curve, gateway to professional CAD' },
+            { name: 'Onshape', type: 'Web-Based', education_rank: 5, cost: 'Free for education/public projects', connects_to: ['TAS1O', 'TAS2O', 'TDJ2O', 'TMJ3M'], category: '3D CAD (Professional)', description: 'Professional cloud-based CAD platform', why_sufficient: 'Professional parametric CAD, assemblies, technical drawings, version control, free for education', pros: ['Professional features', 'Cloud collaboration', 'Version history', 'Free for education'], cons: ['Steeper learning curve', 'Public projects on free tier'], url: 'https://onshape.com', free_badge: true, education_notes: 'TOP CHOICE: Professional CAD free for education, teaches real engineering workflows' },
+            { name: 'Fusion 360', type: 'Desktop / Web-Based (Education)', education_rank: 5, cost: 'Free for students', connects_to: ['TAS1O', 'TAS2O', 'TDJ2O', 'TMJ2O', 'TMJ3M'], category: '3D CAD / CAM', description: 'Professional CAD/CAM software with free education license', why_sufficient: 'Professional features, parametric modeling, CAM toolpaths, G-code generation, industry-used, free for education', pros: ['Professional CAD/CAM', 'Free for education', 'Industry-used', 'Cloud-based option'], cons: ['Educational verification needed', 'Some features need download', 'Complex for beginners'], url: 'https://autodesk.com/products/fusion-360/education', free_badge: true, education_notes: 'TOP CHOICE: Industry-standard CAD/CAM free for all students, teaches real manufacturing workflows' },
+            { name: 'Inventor', type: 'Desktop', education_rank: 1, cost: '$2,085/year', connects_to: ['TDJ2O'], category: '3D CAD', description: 'Professional parametric CAD software', why_sufficient: 'Advanced parametric modeling, assemblies, simulations', pros: ['Professional features', 'Parametric modeling', 'Simulations'], cons: ['Very expensive', 'Requires powerful computer', 'Complex'], url: null, free_badge: false, education_notes: 'Not recommended, Fusion 360 Education provides same features for free' },
+            { name: 'SolidWorks', type: 'Desktop', education_rank: 1, cost: '$4,195/year', connects_to: ['TDJ2O', 'TMJ3M'], category: '3D CAD', description: 'Industry-standard professional CAD', why_sufficient: 'Professional parametric CAD, assemblies, simulations, drawings', pros: ['Industry standard', 'Professional features'], cons: ['Very expensive', 'Windows primarily', 'Requires powerful computer'], url: null, free_badge: false, education_notes: 'Not recommended, Fusion 360 and Onshape provide better value (both free for education)' },
+            { name: 'AutoCAD', type: 'Desktop', education_rank: 2, cost: '$1,865/year', connects_to: ['TMJ2O', 'TCJ2O'], category: 'CAD (2D Drafting)', description: 'Professional 2D drafting and design software', why_sufficient: 'Technical drawings, dimensioning, layer management, DWG export', pros: ['Industry standard', 'Professional features', '2D drafting focus'], cons: ['Expensive subscription', 'Overkill for basic drawings', 'Requires installation'], url: null, free_badge: false, education_notes: 'Too expensive, use free alternatives instead' },
+            { name: 'Mastercam', type: 'Desktop', education_rank: 1, cost: '$6,370+', connects_to: ['TMJ3M'], category: 'CAM (CNC Programming)', description: 'Industry-standard CNC programming software', why_sufficient: 'Professional CAM toolpaths, G-code generation, multi-axis support', pros: ['Industry standard', 'Advanced features'], cons: ['Extremely expensive', 'Very complex', 'Requires powerful PC'], url: null, free_badge: false, education_notes: 'Prohibitively expensive, Fusion 360 Education includes CAM at no cost' },
+            { name: 'SketchUp Free', type: 'Web-Based', education_rank: 3, cost: 'Free', connects_to: ['TAS1O', 'TDJ2O'], category: '3D Modeling', description: 'Web-based 3D modeling tool', why_sufficient: 'Easy 3D modeling, rendering, STL export, suitable for design exploration', pros: ['Free', 'Web-based', 'Easy to learn', 'Large community'], cons: ['Limited compared to paid', 'Requires account'], url: 'https://sketchup.com', free_badge: true, education_notes: 'Good complement to Tinkercad for general 3D modeling' },
+            { name: 'LibreCAD', type: 'Desktop (Free, open-source)', education_rank: 2, cost: 'Free', connects_to: ['TMJ2O', 'TCJ2O'], category: 'CAD (2D Drafting)', description: 'Free, open-source 2D CAD software', why_sufficient: '2D technical drawings, no cost, cross-platform', pros: ['Completely free', 'Open-source', 'Cross-platform'], cons: ['Requires installation', 'Smaller community', 'Dated interface'], url: null, free_badge: true, education_notes: 'Free option but less intuitive than web-based, setup required' }
+        ];
+
+        // Setup comprehensive software table
+        function setupComparisonTool() {
+            renderSoftwareTable();
+        }
+
+        // Render complete software table
+        function renderSoftwareTable() {
+            const container = document.getElementById('software-table-container');
+            
+            // Group by category
+            const categories = {};
+            allSoftware.forEach(software => {
+                if (!categories[software.category]) {
+                    categories[software.category] = [];
+                }
+                categories[software.category].push(software);
+            });
+
+            // Sort: Web-Based first, then Desktop
+            Object.keys(categories).forEach(cat => {
+                categories[cat].sort((a, b) => {
+                    if (a.type.includes('Web') && !b.type.includes('Web')) return -1;
+                    if (!a.type.includes('Web') && b.type.includes('Web')) return 1;
+                    return a.name.localeCompare(b.name);
+                });
+            });
+
+            // Desktop table for large screens
+            let tableHTML = `
+                <div class="software-table-wrapper">
+                    <table class="software-table">
+                        <thead>
+                            <tr>
+                                <th>Software Name</th>
+                                <th>Education Rank</th>
+                                <th>Type</th>
+                                <th>Cost</th>
+                                <th>Connects to</th>
+                                <th>Description</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                                <th>Why Sufficient</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+
+            Object.keys(categories).sort().forEach(category => {
+                tableHTML += `
+                    <tr class="category-header-row">
+                        <td colspan="10">📦 ${category}</td>
+                    </tr>
+                `;
+
+                categories[category].forEach(software => {
+                    const typeClass = software.type.includes('Web') ? 'web-based' : 'desktop';
+                    const typeBadgeClass = software.type.includes('Web') ? 'web' : 'desktop';
+                    const typeIcon = software.type.includes('Web') ? '🌐' : '🖥️';
+                    
+                    const stars = '★'.repeat(software.education_rank || 0) + '☆'.repeat(5 - (software.education_rank || 0));
+                    const rankLabels = { 5: 'Excellent', 4: 'Very Good', 3: 'Good', 2: 'Fair', 1: 'Limited' };
+                    const rankClasses = { 5: 'excellent', 4: 'very-good', 3: 'good', 2: 'fair', 1: 'limited' };
+                    const rankLabel = rankLabels[software.education_rank] || 'N/A';
+                    const rankClass = rankClasses[software.education_rank] || 'fair';
+                    
+                    tableHTML += `
+                        <tr class="${typeClass}">
+                            <td class="software-name-cell">
+                                ${software.name}
+                            </td>
+                            <td class="edu-rank-cell">
+                                <div class="star-rating">
+                                    <span class="stars">${stars}</span>
+                                    <span class="rank-badge ${rankClass}">${rankLabel}</span>
+                                </div>
+                                ${software.education_notes ? `<div class="edu-notes">${software.education_notes}</div>` : ''}
+                            </td>
+                            <td>
+                                <span class="software-type-badge ${typeBadgeClass}">${typeIcon} ${software.type}</span>
+                            </td>
+                            <td>
+                                <span class="cost-badge ${software.free_badge ? 'free' : ''}">${software.cost}</span>
+                            </td>
+                            <td>
+                                <div class="connects-to-tags">
+                                    ${software.connects_to.map(course => `<span class="course-tag">${course}</span>`).join('')}
+                                </div>
+                            </td>
+                            <td>${software.description}</td>
+                            <td>
+                                <ul class="software-list pros">
+                                    ${software.pros.map(pro => `<li>${pro}</li>`).join('')}
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="software-list cons">
+                                    ${software.cons.map(con => `<li>${con}</li>`).join('')}
+                                </ul>
+                            </td>
+                            <td>${software.why_sufficient}</td>
+                            <td>
+                                ${software.url ? `<a href="${software.url}" target="_blank" class="software-url-link">🔗 Visit</a>` : '<span style="color: var(--color-text-secondary);">—</span>'}
+                            </td>
+                        </tr>
+                    `;
+                });
+            });
+
+            tableHTML += `
+                        </tbody>
+                    </table>
+                </div>
+            `;
+
+            // Mobile cards
+            let mobileHTML = '<div class="software-cards-mobile">';
+            
+            Object.keys(categories).sort().forEach(category => {
+                mobileHTML += `<h3 style="margin: var(--space-24) 0 var(--space-16); font-size: var(--font-size-xl); color: var(--color-text);">📦 ${category}</h3>`;
+                
+                categories[category].forEach(software => {
+                    const typeClass = software.type.includes('Web') ? 'web-based' : 'desktop';
+                    const typeBadgeClass = software.type.includes('Web') ? 'web' : 'desktop';
+                    const typeIcon = software.type.includes('Web') ? '🌐' : '🖥️';
+                    
+                    const mobileStars = '★'.repeat(software.education_rank || 0) + '☆'.repeat(5 - (software.education_rank || 0));
+                    const mobileRankLabels = { 5: 'Excellent', 4: 'Very Good', 3: 'Good', 2: 'Fair', 1: 'Limited' };
+                    const mobileRankClasses = { 5: 'excellent', 4: 'very-good', 3: 'good', 2: 'fair', 1: 'limited' };
+                    const mobileRankLabel = mobileRankLabels[software.education_rank] || 'N/A';
+                    const mobileRankClass = mobileRankClasses[software.education_rank] || 'fair';
+                    
+                    mobileHTML += `
+                        <div class="software-card-mobile ${typeClass}">
+                            <div class="mobile-card-header">
+                                <h4 style="font-size: var(--font-size-xl); margin-bottom: var(--space-8);">${software.name}</h4>
+                                <div class="software-type-badge ${typeBadgeClass}">${typeIcon} ${software.type}</div>
+                            </div>
+                            
+                            <div class="mobile-card-row">
+                                <div class="mobile-card-label">Education Rank</div>
+                                <div class="star-rating">
+                                    <span class="stars">${mobileStars}</span>
+                                    <span class="rank-badge ${mobileRankClass}">${mobileRankLabel}</span>
+                                </div>
+                                ${software.education_notes ? `<div class="edu-notes" style="margin-top: var(--space-8);">${software.education_notes}</div>` : ''}
+                            </div>
+                            
+                            <div class="mobile-card-row">
+                                <div class="mobile-card-label">Cost</div>
+                                <span class="cost-badge ${software.free_badge ? 'free' : ''}">${software.cost}</span>
+                            </div>
+                            
+                            <div class="mobile-card-row">
+                                <div class="mobile-card-label">Connects to</div>
+                                <div class="connects-to-tags">
+                                    ${software.connects_to.map(course => `<span class="course-tag">${course}</span>`).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="mobile-card-row">
+                                <div class="mobile-card-label">Description</div>
+                                <div>${software.description}</div>
+                            </div>
+                            
+                            <div class="mobile-card-row">
+                                <div class="mobile-card-label">Why Sufficient</div>
+                                <div>${software.why_sufficient}</div>
+                            </div>
+                            
+                            <div class="mobile-card-row">
+                                <div class="mobile-card-label">Pros</div>
+                                <ul class="software-list pros">
+                                    ${software.pros.map(pro => `<li>${pro}</li>`).join('')}
+                                </ul>
+                            </div>
+                            
+                            <div class="mobile-card-row">
+                                <div class="mobile-card-label">Cons</div>
+                                <ul class="software-list cons">
+                                    ${software.cons.map(con => `<li>${con}</li>`).join('')}
+                                </ul>
+                            </div>
+                            
+                            ${software.url ? `
+                                <div class="mobile-card-row">
+                                    <a href="${software.url}" target="_blank" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">🔗 Visit Website</a>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                });
+            });
+            
+            mobileHTML += '</div>';
+            
+            container.innerHTML = tableHTML + mobileHTML;
+        }
+        
+        // Filter courses with smooth scroll to results
+        function filterCourses() {
+            const searchTerm = document.getElementById('search-input-courses').value.toLowerCase();
+            const gradeFilter = document.getElementById('grade-filter-courses').value;
+            const levelFilter = document.getElementById('level-filter-courses').value;
+
+            filteredCourses = coursesData.filter(course => {
+                const matchesSearch = !searchTerm || 
+                    course.code.toLowerCase().includes(searchTerm) ||
+                    course.name.toLowerCase().includes(searchTerm) ||
+                    course.description.toLowerCase().includes(searchTerm) ||
+                    course.software_categories.some(cat => cat.category.toLowerCase().includes(searchTerm));
+                
+                const matchesGrade = !gradeFilter || course.grade === gradeFilter;
+                const matchesLevel = !levelFilter || course.level.includes(levelFilter);
+
+                return matchesSearch && matchesGrade && matchesLevel;
+            });
+
+            renderCourseGrid();
+        }
+
+        // Clear filters with scroll to results
+        function clearFilters() {
+            document.getElementById('search-input-courses').value = '';
+            document.getElementById('grade-filter-courses').value = '';
+            document.getElementById('level-filter-courses').value = '';
+            filteredCourses = [...coursesData];
+            renderCourseGrid();
+            
+            // Hide course detail if shown
+            document.getElementById('course-detail-expanded').style.display = 'none';
+        }
+
+
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Logo click - scroll to home
+            document.getElementById('logo-home').addEventListener('click', (e) => {
+                e.preventDefault();
+                scrollToSection('home');
+            });
+
+            // Navigation links - smooth scroll to sections
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = link.dataset.section;
+                    scrollToSection(sectionId);
+                });
+            });
+
+            // Back to courses button
+            document.getElementById('back-to-courses').addEventListener('click', () => {
+                document.getElementById('course-detail-expanded').style.display = 'none';
+                const courseGrid = document.getElementById('course-grid');
+                smoothScrollTo(courseGrid, 100);
+            });
+
+            // Filters
+            document.getElementById('search-input-courses').addEventListener('input', filterCourses);
+            document.getElementById('grade-filter-courses').addEventListener('change', filterCourses);
+            document.getElementById('level-filter-courses').addEventListener('change', filterCourses);
+            document.getElementById('clear-filters-courses').addEventListener('click', clearFilters);
+
+
+        }
+
+        // Start the app
+        init();
+    </script>
+</body>
+</html>
